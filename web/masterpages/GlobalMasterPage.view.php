@@ -27,58 +27,58 @@
                         <li>
                             Base64
                             <ul>
-                                <li><a href="Base64Decode.php" data-keywords="base base64 encode encoding">Base64 Decode</a></li>
-                                <li><a href="Base64Encode.php" data-keywords="base base64 decode decoding">Base64 Encode</a></li>
+                                <li data-keywords="base base64 encode encoding"><a href="Base64Decode.php">Base64 Decode</a></li>
+                                <li data-keywords="base base64 decode decoding"><a href="Base64Encode.php">Base64 Encode</a></li>
                             </ul>
                         </li>
                         <li>
                             MDx
                             <ul>
-                                <li><a href="MD2Generator.php" data-keywords="hash md md2">MD2</a></li>
-                                <li><a href="MD4Generator.php" data-keywords="hash md md4">MD4</a></li>
-                                <li><a href="MD5Generator.php" data-keywords="hash md md5">MD5</a></li>
+                                <li data-keywords="hash md md2"><a href="MD2Generator.php">MD2</a></li>
+                                <li data-keywords="hash md md4"><a href="MD4Generator.php">MD4</a></li>
+                                <li data-keywords="hash md md5"><a href="MD5Generator.php">MD5</a></li>
                             </ul>
                         </li>
                         <li>
                             SHA
                             <ul>
-                                <li><a href="SHA256Generator.php" data-keywords="hash sha sha1 sha256">SHA 256</a></li>
-                                <li><a href="SHA512Generator.php" data-keywords="hash sha sha1 sha512">SHA 512</a></li>
+                                <li data-keywords="hash sha sha1 sha256"><a href="SHA256Generator.php">SHA 256</a></li>
+                                <li data-keywords="hash sha sha1 sha512"><a href="SHA512Generator.php">SHA 512</a></li>
                             </ul>
                         </li>
 
                         <li>
                             Minify
                             <ul>
-                                <li><a href="MinifyHTML.php" data-keywords="minify minified html xhtml">Minify HTML</a></li>
-                                <li><a href="MinifyCSS.php" data-keywords="minify minified css style">Minify CSS</a></li>
-                                <li><a href="MinifyJavascript.php" data-keywords="minify minified js javascript">Minify Javascript</a></li>
+                                <li data-keywords="minify minified html xhtml"><a href="MinifyHTML.php">Minify HTML</a></li>
+                                <li data-keywords="minify minified css style"><a href="MinifyCSS.php">Minify CSS</a></li>
+                                <li data-keywords="minify minified js javascript"><a href="MinifyJavascript.php">Minify Javascript</a></li>
                             </ul>
                         </li>
                         <li>
                             Text
                             <ul>
-                                <li><a href="UpperCase.php" data-keywords="text case upper uppercase">UPPER CASE</a></li>
-                                <li><a href="LowerCase.php" data-keywords="text case lower lowercase">lower case</a></li>
-                                <li><a href="Capitalize.php" data-keywords="text case capitalize">Capitalize</a></li>
+                                <li data-keywords="text case upper uppercase"><a href="UpperCase.php">UPPER CASE</a></li>
+                                <li data-keywords="text case lower lowercase"><a href="LowerCase.php">lower case</a></li>
+                                <li data-keywords="text case capitalize"><a href="Capitalize.php">Capitalize</a></li>
                             </ul>
                         </li>
                         <li>
                             Indentation
                             <ul>
-                                <li><a href="JSONIndetation.php" data-keywords="indent indentation json">JSON indentation</a></li>
-                                <li><a href="SQLIndentation.php" data-keywords="indent indentation sql query">SQL indentation</a></li>
-                                <li><a href="XMLIndentation.php" data-keywords="indent indentation xml">XML indentation</a></li>
-                                <li><a href="HTMLIndentation.php" data-keywords="indent indentation html xhtml">HTML indentation</a></li>
-                                <li><a href="CSSIndentation.php" data-keywords="indent indentation css style">CSS indentation</a></li>
-                                <li><a href="JavascriptIndentation.php" data-keywords="indent indentation js javascript">Javascript indentation</a></li>
+                                <li data-keywords="indent indentation json"><a href="JSONIndetation.php">JSON indentation</a></li>
+                                <li data-keywords="indent indentation sql query"><a href="SQLIndentation.php">SQL indentation</a></li>
+                                <li data-keywords="indent indentation xml"><a href="XMLIndentation.php">XML indentation</a></li>
+                                <li data-keywords="indent indentation html xhtml"><a href="HTMLIndentation.php">HTML indentation</a></li>
+                                <li data-keywords="indent indentation css style"><a href="CSSIndentation.php">CSS indentation</a></li>
+                                <li data-keywords="indent indentation js javascript"><a href="JavascriptIndentation.php">Javascript indentation</a></li>
                             </ul>
                         </li>
                         <li>
                             Validation
                             <ul>
-                                <li><a href="JSONValidation.php">JSON validation</a></li>
-                                <li><a href="XMLValidation.php">XML validation</a></li>
+                                <li data-keywords="validation validate json"><a href="JSONValidation.php">JSON validation</a></li>
+                                <li data-keywords="validation validate xml"><a href="XMLValidation.php">XML validation</a></li>
                             </ul>
                         </li>
                     </ul>

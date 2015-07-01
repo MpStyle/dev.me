@@ -48,11 +48,12 @@ div, span, li, small
 #menu
 {
     background-color: $light-primary-color;
-    padding: 45px 0px 0px 10px;
+    padding: 45px 10px 0px 10px;
     
     #search_functionality_text
     {
         margin-bottom: 15px;
+        width: 100%;
     }
     
     ul
