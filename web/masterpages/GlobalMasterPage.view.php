@@ -74,7 +74,7 @@
                         <li>
                             Indentation
                             <ul>
-                                <li data-keywords="indent indentation json"><a href="JSONIndetation.php">JSON indentation</a></li>
+                                <li data-keywords="indent indentation json"><a href="JSONIndentation.php">JSON indentation</a></li>
                                 <li data-keywords="indent indentation sql query"><a href="SQLIndentation.php">SQL indentation</a></li>
                                 <li data-keywords="indent indentation xml"><a href="XMLIndentation.php">XML indentation</a></li>
                                 <li data-keywords="indent indentation html xhtml"><a href="HTMLIndentation.php">HTML indentation</a></li>
