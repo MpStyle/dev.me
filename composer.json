@@ -1,0 +1,15 @@
+{
+    "name": "vendor/dev-me",
+    "description": "Description of project dev.me.",
+    "authors": [
+        {
+            "name": "Michele Pagnin",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+        "mpstyle/mtoolkit": "dev-master",
+        "components/jquery": "2.1.4",
+        "twbs/bootstrap": "v3.3.5"
+    }
+}

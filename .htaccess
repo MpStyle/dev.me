@@ -1,0 +1,8 @@
+<Files  ~ "\.(view.php|htaccess)$">
+  Order allow,deny
+  Deny from all
+</Files>
+<Files  ~ "web/masterpages/$">
+  Order allow,deny
+  Deny from all
+</Files>
