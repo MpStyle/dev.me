@@ -6,3 +6,6 @@
 /web/css/MD4Generator.css
 /web/css/SHA256Generator.css
 /vendor/
+/web/css/MinifyCSS.css
+/web/css/MinifyJavascript.css
+/web/css/MinifyHTML.css
