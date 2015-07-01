@@ -1,14 +1,14 @@
-function HTML()
+function Minify()
 {
     this.serviceName = $('#service_name_hidden').val();
 };
 
-HTML.prototype.callWS = function () {
+Minify.prototype.callWS = function () {
     $("#destination_textarea").val('');
     $("#destination_textarea").attr('placeholder','');
     
     var outherThis=this;
-    var foo = new $.JsonRpcClient({ajaxUrl: 'web/web_services/HTMLWebService.php'});
+    var foo = new $.JsonRpcClient({ajaxUrl: 'web/web_services/MinifyWebService.php'});
     foo.call(
             outherThis.serviceName
             , {
@@ -22,9 +22,9 @@ HTML.prototype.callWS = function () {
 };
 
 $(function () {
-    var html = new HTML();
+    var minify = new Minify();
 
     $('#source_textarea').keyup(function () {
-        html.callWS();
+        minify.callWS();
     });
 });

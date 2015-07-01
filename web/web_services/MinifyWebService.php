@@ -7,10 +7,10 @@ require_once __DIR__ . '/../../Settings.php';
 use business_logic\html\HTMLBook;
 use MToolkit\Network\RPC\Json\Server\MRPCJsonWebService;
 
-class HTMLWebService extends MRPCJsonWebService
+class MinifyWebService extends MRPCJsonWebService
 {
 
-    public function minifyHTML($params)
+    public function HTML($params)
     {
         $encoded = $params['text'];
 
@@ -19,12 +19,27 @@ class HTMLWebService extends MRPCJsonWebService
         ));
     }
 
-    public function minifyCSS($params)
+    public function CSS($params)
     {
         $encoded = $params['text'];
 
         $this->getResponse()->setResult(array(
             'result_text' => str_replace(array("\r", "\n", "\t", ' '), '', $encoded)
+        ));
+    }
+    
+    public function JSON($params)
+    {
+        $encoded = $params['text'];
+        $json=json_encode(json_decode($encoded));
+        
+        if($json===false)
+        {
+            $json="";
+        }
+
+        $this->getResponse()->setResult(array(
+            'result_text' => $json
         ));
     }
 }

@@ -52,7 +52,8 @@
                             <ul>
                                 <li data-keywords="minify minified html xhtml"><a href="MinifyHTML.php">Minify HTML</a></li>
                                 <li data-keywords="minify minified css style"><a href="MinifyCSS.php">Minify CSS</a></li>
-                                <li data-keywords="minify minified js javascript"><a href="MinifyJavascript.php">Minify Javascript</a></li>
+                                <li data-keywords="minify minified js javascript"><span title="Coming soon" data-toggle="tooltip" data-placement="right">Minify Javascript</span></li>
+                                <li data-keywords="minify minified json"><a href="MinifyJSON.php">Minify JSON</a></li>
                             </ul>
                         </li>
                         <li>

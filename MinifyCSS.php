@@ -17,7 +17,7 @@ class MinifyCSS extends BasePage
         parent::getMasterPage()->setSourceTextAreaPlaceholder('Insert here the text to minify...');
         parent::getMasterPage()->setDestinationTextAreaPlaceholder('Minified text...');
         
-        parent::addJavascript('web/javascripts/HTML.min.js');
+        parent::addJavascript('web/javascripts/Minify.min.js');
         parent::addCss('web/css/MinifyCSS.css');
         
         parent::setPageTitle("Minify CSS - Dev.me");

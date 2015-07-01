@@ -1,5 +1,6 @@
 function GlobalMasterPage()
 {
+    $('[data-toggle="tooltip"]').tooltip()
 }
 ;
 
