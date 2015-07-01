@@ -25,6 +25,13 @@
                     <input type="text" id="search_functionality_text" placeholder="Search functionality..." />
                     <ul>
                         <li>
+                            Hex
+                            <ul>
+                                <li data-keywords="hex encode encoding"><a href="HexDecode.php">Hex Decode</a></li>
+                                <li data-keywords="hex decode decoding"><a href="HexEncode.php">Hex Encode</a></li>
+                            </ul>
+                        </li>
+                        <li>
                             Base64
                             <ul>
                                 <li data-keywords="base base64 encode encoding"><a href="Base64Decode.php">Base64 Decode</a></li>
