@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5b615230c0bee5568fef444ad7fce6ff",
+    "hash": "6189ed34f5637661bbdf477116019b4e",
     "packages": [
         {
             "name": "components/jquery",
@@ -47,6 +47,51 @@
             "description": "jQuery JavaScript Library",
             "homepage": "http://jquery.com",
             "time": "2015-05-08 05:04:47"
+        },
+        {
+            "name": "gajus/dindent",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gajus/dindent.git",
+                "reference": "d81c3a6f78fbe1ab26f5e753098bbbef6b6a9f3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gajus/dindent/zipball/d81c3a6f78fbe1ab26f5e753098bbbef6b6a9f3c",
+                "reference": "d81c3a6f78fbe1ab26f5e753098bbbef6b6a9f3c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Gajus\\Dindent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Gajus Kuizinas",
+                    "email": "gk@anuary.com"
+                }
+            ],
+            "description": "HTML indentation library for development and testing.",
+            "homepage": "https://github.com/gajus/dindent",
+            "keywords": [
+                "format",
+                "html",
+                "indent"
+            ],
+            "time": "2014-10-08 10:03:04"
         },
         {
             "name": "jdorn/sql-formatter",

@@ -11,7 +11,12 @@ class IndentationWebService extends MRPCJsonWebService
 
     public function HTML($params)
     {
+        $xml = $params['text'];
+        $indenter = new \Gajus\Dindent\Indenter();
         
+        $this->getResponse()->setResult(array(
+            'result_text' => $indenter->indent($xml)
+        ));
     }
 
     public function CSS($params)
