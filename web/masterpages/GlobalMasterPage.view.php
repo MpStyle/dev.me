@@ -78,7 +78,7 @@
                                 <li data-keywords="indent indentation sql query"><a href="SQLIndentation.php">SQL indentation</a></li>
                                 <li data-keywords="indent indentation xml"><a href="XMLIndentation.php">XML indentation</a></li>
                                 <li data-keywords="indent indentation html xhtml"><a href="HTMLIndentation.php">HTML indentation</a></li>
-                                <li data-keywords="indent indentation css style"><a href="CSSIndentation.php">CSS indentation</a></li>
+                                <li data-keywords="indent indentation css style"><span title="Coming soon" data-toggle="tooltip" data-placement="right">CSS indentation</span></li>
                                 <li data-keywords="indent indentation js javascript"><a href="JavascriptIndentation.php">Javascript indentation</a></li>
                             </ul>
                         </li>
