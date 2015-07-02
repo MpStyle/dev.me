@@ -1,3 +1,10 @@
+<?php 
+namespace web\masterpages;
+
+use web\localizations\Localization;
+
+/* @var $this GlobalMasterPage */
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +25,10 @@
         <script src="web/javascripts/GlobalMasterPage.min.js" type="text/javascript"></script>
     </head>
     <body>
-        <header id="header" class="material_shadow"><span id="toggle_menu" class="glyphicon glyphicon-menu-hamburger hidden-sm hidden-md hidden-lg"></span> Dev.me</header>
+        <header id="header" class="material_shadow">
+            <span id="toggle_menu" class="glyphicon glyphicon-menu-hamburger hidden-sm hidden-md hidden-lg"></span> 
+            <?php echo Localization::getString("app_name") ?>
+        </header>
         <div id="container" class="container-fluid">
             <div class="row">
                 <div id="menu" class="hidden-xs col-sm-3 col-md-3 col-lg-3">
