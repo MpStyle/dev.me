@@ -10,6 +10,7 @@
     "require": {
         "mpstyle/mtoolkit": "dev-master",
         "components/jquery": "2.1.4",
-        "twbs/bootstrap": "v3.3.5"
+        "twbs/bootstrap": "v3.3.5",
+        "jdorn/sql-formatter": "v1.2.17"
     }
 }

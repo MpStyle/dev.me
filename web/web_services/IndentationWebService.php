@@ -18,25 +18,25 @@ class IndentationWebService extends MRPCJsonWebService
     {
         
     }
-    
+
     public function JSON($params)
     {
         $encoded = $params['text'];
-        $jsonDecode=json_decode($encoded);
-        $isValid=true;
-        
-        if( $jsonDecode===false || $jsonDecode==null )
+        $jsonDecode = json_decode($encoded);
+        $isValid = true;
+
+        if ($jsonDecode === false || $jsonDecode == null)
         {
-            $isValid=false;
+            $isValid = false;
         }
         else
         {
-            $json=json_encode($jsonDecode);
-        
-            if($json===false)
+            $json = json_encode($jsonDecode);
+
+            if ($json === false)
             {
-                $json="";
-                $isValid=false;
+                $json = "";
+                $isValid = false;
             }
         }
 
@@ -45,19 +45,27 @@ class IndentationWebService extends MRPCJsonWebService
             , 'isValid' => $isValid
         ));
     }
-    
+
     public function SQL($params)
     {
-        
+        $encoded = $params['text'];
+        $sql = \SqlFormatter::format($encoded, false);
+        $sql = str_replace("<pre>", "", $sql);
+        $sql = str_replace("</pre>", "", $sql);
+
+        $this->getResponse()->setResult(array(
+            'result_text' => $sql
+        ));
     }
-    
+
     public function XML($params)
     {
         
     }
-    
+
     public function Javascript($params)
     {
         
     }
+
 }
