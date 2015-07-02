@@ -60,7 +60,25 @@ class IndentationWebService extends MRPCJsonWebService
 
     public function XML($params)
     {
+        $xml = $params['text'];
+        $isValid = true;
         
+        $doc = new \DOMDocument();
+        $doc->loadXML($xml);
+        $doc->preserveWhiteSpace = false;
+        $doc->formatOutput = true;
+        $result = $doc->saveXML();
+        
+        if( $result===false )
+        {
+            $isValid=false;
+            $result="";
+        }
+        
+        $this->getResponse()->setResult(array(
+            'result_text' => $result
+            , 'isValid' => $isValid
+        ));
     }
 
     public function Javascript($params)
