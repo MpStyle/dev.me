@@ -27,19 +27,32 @@ class MinifyWebService extends MRPCJsonWebService
             'result_text' => str_replace(array("\r", "\n", "\t", ' '), '', $encoded)
         ));
     }
-    
+
     public function JSON($params)
     {
         $encoded = $params['text'];
-        $json=json_encode(json_decode($encoded));
-        
-        if($json===false)
+        $isValid = true;
+        $jsonDecode = json_decode($encoded);
+
+        if ($jsonDecode === false || $jsonDecode==null)
         {
-            $json="";
+            $isValid = false;
+        }
+        else
+        {
+            $json = json_encode($jsonDecode);
+
+            if ($json === false)
+            {
+                $json = "";
+                $isValid = false;
+            }
         }
 
         $this->getResponse()->setResult(array(
             'result_text' => $json
+            , 'isValid' => $isValid
         ));
     }
+
 }

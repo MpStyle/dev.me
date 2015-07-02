@@ -16,6 +16,18 @@ Indentation.prototype.callWS = function () {
             }
     , function (data) {
         $("#destination_textarea").val(data.result_text);
+        $('#source_textarea_container').removeClass("has-success");
+        $('#source_textarea_container').removeClass("has-error");
+        
+        switch(data.isValid)
+        {
+            case true:
+                $('#source_textarea_container').addClass("has-success");
+                break;
+            case false:
+                $('#source_textarea_container').addClass("has-error");
+                break;
+        }
     }, function (error) {
     }
     );
