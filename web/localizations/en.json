@@ -1,3 +1,13 @@
 {
     "app_name":"Dev.me"
+    
+    , "hex_menu_item":"Hex"
+    , "base64_menu_item":"Base64"
+    , "mdx_menu_item":"MDx"
+    , "sha_menu_item":"SHA"
+    , "minify_menu_item":"Minify"
+    , "text_menu_item":"Text"
+    , "indentation_menu_item":"Indentation"
+    , "validation_menu_item":"Validation"
+    , "converters_menu_item":"Converters"
 }

@@ -32,24 +32,24 @@ use web\localizations\Localization;
         <div id="container" class="container-fluid">
             <div class="row">
                 <div id="menu" class="hidden-xs col-sm-3 col-md-3 col-lg-3">
-                    <input type="text" id="search_functionality_text" placeholder="Search functionality..." />
+                    <input type="text" id="search_functionality_text" class="form-control" placeholder="Search functionality..." />
                     <ul>
                         <li>
-                            Hex
+                            <?php echo Localization::getString("hex_menu_item") ?>
                             <ul>
                                 <li data-keywords="hex encode encoding"><a href="HexDecode.php">Hex Decode</a></li>
                                 <li data-keywords="hex decode decoding"><a href="HexEncode.php">Hex Encode</a></li>
                             </ul>
                         </li>
                         <li>
-                            Base64
+                            <?php echo Localization::getString("base64_menu_item") ?>
                             <ul>
                                 <li data-keywords="base base64 encode encoding"><a href="Base64Decode.php">Base64 Decode</a></li>
                                 <li data-keywords="base base64 decode decoding"><a href="Base64Encode.php">Base64 Encode</a></li>
                             </ul>
                         </li>
                         <li>
-                            MDx
+                            <?php echo Localization::getString("mdx_menu_item") ?>
                             <ul>
                                 <li data-keywords="hash md md2"><a href="MD2Generator.php">MD2</a></li>
                                 <li data-keywords="hash md md4"><a href="MD4Generator.php">MD4</a></li>
@@ -57,7 +57,7 @@ use web\localizations\Localization;
                             </ul>
                         </li>
                         <li>
-                            SHA
+                            <?php echo Localization::getString("sha_menu_item") ?>
                             <ul>
                                 <li data-keywords="hash sha sha1 sha256"><a href="SHA256Generator.php">SHA 256</a></li>
                                 <li data-keywords="hash sha sha1 sha512"><a href="SHA512Generator.php">SHA 512</a></li>
@@ -65,7 +65,7 @@ use web\localizations\Localization;
                         </li>
 
                         <li>
-                            Minify
+                            <?php echo Localization::getString("minify_menu_item") ?>
                             <ul>
                                 <li data-keywords="minify minified html xhtml"><a href="MinifyHTML.php">Minify HTML</a></li>
                                 <li data-keywords="minify minified css style"><a href="MinifyCSS.php">Minify CSS</a></li>
@@ -74,7 +74,7 @@ use web\localizations\Localization;
                             </ul>
                         </li>
                         <li>
-                            Text
+                            <?php echo Localization::getString("text_menu_item") ?>
                             <ul>
                                 <li data-keywords="text case upper uppercase"><a href="UpperCase.php">UPPER CASE</a></li>
                                 <li data-keywords="text case lower lowercase"><a href="LowerCase.php">lower case</a></li>
@@ -82,7 +82,7 @@ use web\localizations\Localization;
                             </ul>
                         </li>
                         <li>
-                            Indentation
+                            <?php echo Localization::getString("indentation_menu_item") ?>
                             <ul>
                                 <li data-keywords="indent indentation json"><a href="JSONIndentation.php">JSON indentation</a></li>
                                 <li data-keywords="indent indentation sql query"><a href="SQLIndentation.php">SQL indentation</a></li>
@@ -93,17 +93,17 @@ use web\localizations\Localization;
                             </ul>
                         </li>
                         <li>
-                            Validation
+                            <?php echo Localization::getString("validation_menu_item") ?>
                             <ul>
                                 <li data-keywords="validation validate json"><a href="JSONValidation.php">JSON validation</a></li>
                                 <li data-keywords="validation validate xml"><a href="XMLValidation.php">XML validation</a></li>
                             </ul>
                         </li>
                         <li>
-                            Converters
+                            <?php echo Localization::getString("converters_menu_item") ?>
                             <ul>
-                                <li><a href="TimestampToDate.php">Timestamp to date</a></li>
-                                <li><a href="DateToTimestamp.php">Date to timestamp</a></li>
+                                <li data-keywords="date datetime time timestamp epoch unix"><a href="TimestampToDate.php">Timestamp to date</a></li>
+                                <li data-keywords="date datetime time timestamp epoch unix"><a href="DateToTimestamp.php">Date to timestamp</a></li>
                             </ul>
                         </li>
                     </ul>

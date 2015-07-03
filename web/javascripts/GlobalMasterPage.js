@@ -1,6 +1,10 @@
 function GlobalMasterPage()
 {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
+    
+    $("#menu *[data-keywords]").each(function(){
+        $(this).parent('ul').parent('li').data('keywords', $(this).data('keywords'));
+    });
 }
 ;
 
@@ -9,13 +13,14 @@ GlobalMasterPage.prototype.functionalitySearch=function(search)
     // If "search" is empty, it shows every items of the menù
     if(search.length<=0)
     {
-        $("#menu *[data-keywords]").show();
+        $("#menu *[data-keywords], #menu li").show();
         return;
     }
     
     var searchedWords=search.toLowerCase().split(' ');
     
-    $("#menu *[data-keywords]").each(function(){
+    $("#menu *[data-keywords], #menu li").each(function(){
+        console.log($(this).data("keywords"));
         var keywords=$(this).data("keywords").split(' ');
         var found=false;
         
