@@ -1,6 +1,7 @@
-<?php 
+<?php
 namespace web\masterpages;
 
+use business_logic\localization\LocalizationBook;
 use web\localizations\Localization;
 
 /* @var $this GlobalMasterPage */
@@ -8,7 +9,83 @@ use web\localizations\Localization;
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Start SEO -->
+        <meta name="description" content="<?php echo Localization::getString("short_app_description") ?>"/>
+        <link rel="original-source" href="http://www.micene.net/dev.me/" />
+        <link rel="canonical" href="http://www.micene.net/dev.me/" />
+        <meta property="og:locale" content="<?php echo strtolower(LocalizationBook::getLocalization()) ?>_<?php echo strtoupper(LocalizationBook::getLocalization()) ?>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="<?php echo Localization::getString("app_motto") ?>" />
+        <meta property="og:description" content="<?php echo Localization::getString("short_app_description") ?>" />
+        <meta property="og:url" content="http://www.micene.net/dev.me/" />
+        <meta property="og:site_name" content="<?php Localization::getString("app_name") ?>" />
+        <meta property="og:image" content="http://www.micene.net/dev.me/web/images/logo_128.png" />
+        <script type="application/ld+json">
+            { 
+                "@context": "http://schema.org"
+                , "@type": "WebSite"
+                , "url": "http://www.micene.net/dev.me"
+            }
+        </script>
+
+        <meta name="twitter:site" content="@MiNi_Group" />
+        <meta name="twitter:title" content="<?php Localization::getString("app_name") ?> | <?php echo Localization::getString("app_motto") ?>" />
+        <meta name="twitter:description" content="<?php echo Localization::getString("short_app_description") ?>" />
+        <meta name="twitter:creator" content="@mpstyle" />
+        <meta name="twitter:image:src" content="http://www.micene.net/dev.me/web/images/logo_1024.png" />
+
+        <meta itemprop="name" content="<?php Localization::getString("app_name") ?>" />
+        <meta itemprop="description" content="<?php echo Localization::getString("short_app_description") ?>" />
+        <meta itemprop="image" content="http://www.micene.net/dev.me/web/images/logo_128.png" />
+
+        <meta name="language" content="<?php echo LocalizationBook::getLocalization() ?>">
+        <meta name="author" content="Michele Pagnin">
+        <meta name="expires" content="never">
+        <meta name="robots" content="all">
+
+        <meta name="rating" content="general" />
+        <meta name="distribution" content="global" />
+        <meta name="revisit-after" content="1 day" />
+
+        <!-- End SEO -->
+        
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+        <!-- Android web app -->
+        <meta name='theme-color' content='#4285f4'/>
+        <link rel='icon' sizes='192x192' href='web/images/logo_192.png'/>
+        <link rel='icon' sizes='128x128' href='web/images/logo_128.png'/>
+
+        <!-- iOS web app -->
+        <link rel="apple-touch-icon" href="touch-icon-iphone.png"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="web/images/logo_76_ios.png"/>
+        <link rel="apple-touch-icon" sizes="120x120" href="web/images/logo_120_ios.png"/>
+        <link rel="apple-touch-icon" sizes="128x128" href="web/images/logo_128_ios.png"/>
+        <link rel="apple-touch-icon" sizes="152x152" href="web/images/logo_152_ios.png"/>
+        <link rel="apple-touch-icon-precomposed" sizes="128x128" href="web/images/logo_128_ios.png"/>
+        <link rel="apple-touch-startup-image" href="web/images/splashscreen_ios.png"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#fff"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+        <!-- Chome app -->
+        <link rel="manifest" href="manifest.json">
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- Windows phone web app -->
+        <meta name="application-name" content="<?php echo Localization::getString( "app_name" ) ?>" />
+        <meta name="msapplication-TileColor" content="#4285f4" />
+        <meta name="msapplication-square70x70logo" content="web/images/smalltile.png" />
+        <meta name="msapplication-square150x150logo" content="web/images/mediumtile.png" />
+        <meta name="msapplication-wide310x150logo" content="web/images/widetile.png" />
+        <meta name="msapplication-square310x310logo" content="web/images/largetile.png" />
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        
         <title></title>
 
         <script src="vendor/components/jquery/jquery.min.js" type="text/javascript"></script>

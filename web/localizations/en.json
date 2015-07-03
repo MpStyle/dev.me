@@ -1,5 +1,7 @@
 {
     "app_name":"Dev.me"
+    , "app_motto" : "Developers tool"
+    , "short_app_description" : "The free, powerful and real-time tool for the developers."
     
     , "hex_menu_item":"Hex"
     , "base64_menu_item":"Base64"
