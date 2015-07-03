@@ -48,17 +48,17 @@ GlobalMasterPage.prototype.functionalitySearch=function(search)
 
 GlobalMasterPage.prototype.toggleMenu = function ()
 {
-    if ($('#menu').is(':hidden'))
+    if ($('#menu_container').is(':hidden'))
     {
-        $("#menu").hide();
-        $("#menu").removeClass("hidden-xs");
+        $("#menu_container").hide();
+        $("#menu_container").removeClass("hidden-xs");
     }
 
-    $("#menu").toggle(function () {
-        if ($('#menu').is(':hidden'))
+    $("#menu_container").toggle(function () {
+        if ($('#menu_container').is(':hidden'))
         {
-            $("#menu").addClass("hidden-xs");
-            $("#menu").show();
+            $("#menu_container").addClass("hidden-xs");
+            $("#menu_container").show();
         }
     });
     $("#content").toggle();
