@@ -52,13 +52,13 @@ div, span, li, small
 
 @media (max-width: 768px) 
 {
-	#header
-	{
-		h1
-		{
-			padding-left: 30px;
-		}
-	}
+    #header
+    {
+        h1
+        {
+            padding-left: 30px;
+        }
+    }
 }
 
 #header *
@@ -74,7 +74,7 @@ div, span, li, small
 {
     background-color: $light-primary-color;
     padding: 65px 10px 0px 10px;
-    
+
     #menu
     {
         list-style: none;
@@ -105,4 +105,13 @@ div, span, li, small
 #content
 {
     padding-top: 65px;
+
+    #editor
+    {
+        #web_service_info
+        {
+            clear: both;
+            word-wrap: break-word;
+        }
+    }
 }

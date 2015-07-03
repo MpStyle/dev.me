@@ -22,9 +22,9 @@ use web\localizations\Localization;
         <meta property="og:image" content="http://www.micene.net/dev.me/web/images/logo_128.png" />
         <script type="application/ld+json">
             { 
-                "@context": "http://schema.org"
-                , "@type": "WebSite"
-                , "url": "http://www.micene.net/dev.me"
+            "@context": "http://schema.org"
+            , "@type": "WebSite"
+            , "url": "http://www.micene.net/dev.me"
             }
         </script>
 
@@ -191,6 +191,25 @@ use web\localizations\Localization;
                     <h1 id="title"></h1>
                     <div id="service_name"></div>
                     <div id="editor"></div>
+
+                    <div class="panel panel-default" id="web_service_info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Web service</h3>
+                        </div>
+                        <div class="panel-body">
+							<h4>Name</h4>
+							<div><?php echo $this->getWebServiceName() ?></div>
+						
+							<h4>End-point:</h4>
+							<div><?php echo $this->getWebServiceEndPoint() ?></div>
+						
+                            <h4>Request</h4>
+                            <pre><?php echo $this->getWebServiceRequest() ?></pre>
+
+                            <h4>Response</h4>
+                            <pre><?php echo $this->getWebServiceResponse() ?></pre>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

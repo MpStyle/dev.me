@@ -1,1 +1,12 @@
 @import 'VerticalEditorMasterPage';
+
+.bootstrap-datetimepicker-widget
+{
+    z-index: 2000;
+    position: absolute;
+}
+
+.panel
+{
+    z-index: 1000;
+}

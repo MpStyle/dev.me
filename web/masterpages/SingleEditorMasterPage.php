@@ -28,4 +28,19 @@ class SingleEditorMasterPage extends MAbstractMasterPageController
         return $this;
     }
 
+	public function setWebServiceName($webServiceName)
+    {
+        parent::getMasterPage()->setWebServiceName($webServiceName);
+    }
+
+    public function setWebServiceRequest($webServiceRequest)
+    {
+        parent::getMasterPage()->setWebServiceRequest($webServiceRequest);
+    }
+
+    public function setWebServiceResponse($webServiceResponse)
+    {
+        parent::getMasterPage()->setWebServiceResponse($webServiceResponse);
+    }
+
 }
