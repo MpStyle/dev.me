@@ -2,7 +2,7 @@
 
 require './Settings.php';
 
-use MToolkit\Controller\MAbstractPageController;
+use web\BasePage;
 use web\masterpages\VerticalEditorMasterPage;
 
 class MD4Generator extends BasePage

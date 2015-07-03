@@ -7,7 +7,7 @@ use web\localizations\Localization;
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <div id="content">
-    <h1><?php echo Localization::getString("app_name") ?></h1>
+    <h1 class="hidden-xs"><?php echo Localization::getString("app_name") ?></h1>
     <p>
         <strong><?php echo Localization::getString("app_name") ?></strong> is a free, powerful and real-time tool for the developers.
     </p>

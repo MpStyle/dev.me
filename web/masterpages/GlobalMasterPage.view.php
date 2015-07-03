@@ -48,15 +48,15 @@ use web\localizations\Localization;
         <meta name="revisit-after" content="1 day" />
 
         <!-- End SEO -->
-        
+
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-        		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
         <!-- Android web app -->
-        <meta name='theme-color' content='#4285f4'/>
+        <meta name='theme-color' content='#455A64'/>
         <link rel='icon' sizes='192x192' href='web/images/logo_192.png'/>
         <link rel='icon' sizes='128x128' href='web/images/logo_128.png'/>
 
@@ -76,7 +76,7 @@ use web\localizations\Localization;
         <meta name="mobile-web-app-capable" content="yes">
 
         <!-- Windows phone web app -->
-        <meta name="application-name" content="<?php echo Localization::getString( "app_name" ) ?>" />
+        <meta name="application-name" content="<?php echo Localization::getString("app_name") ?>" />
         <meta name="msapplication-TileColor" content="#4285f4" />
         <meta name="msapplication-square70x70logo" content="web/images/smalltile.png" />
         <meta name="msapplication-square150x150logo" content="web/images/mediumtile.png" />
@@ -85,7 +85,7 @@ use web\localizations\Localization;
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        
+
         <title></title>
 
         <script src="vendor/components/jquery/jquery.min.js" type="text/javascript"></script>
@@ -104,7 +104,9 @@ use web\localizations\Localization;
     <body>
         <header id="header" class="material_shadow">
             <span id="toggle_menu" class="glyphicon glyphicon-menu-hamburger hidden-sm hidden-md hidden-lg"></span> 
-            <?php echo Localization::getString("app_name") ?>
+            <h1>
+                <?php echo Localization::getString("app_name") ?>
+            </h1>
         </header>
         <div id="container" class="container-fluid">
             <div class="row">
@@ -161,7 +163,7 @@ use web\localizations\Localization;
                         <li>
                             <?php echo Localization::getString("indentation_menu_item") ?>
                             <ul>
-                                <li data-keywords="indent indentation json"><a href="JSONIndentation.php">JSON indentation</a></li>
+                                <li data-keywords="indent indentation json"><a href="JsonIndentation.php">JSON indentation</a></li>
                                 <li data-keywords="indent indentation sql query"><a href="SQLIndentation.php">SQL indentation</a></li>
                                 <li data-keywords="indent indentation xml"><a href="XMLIndentation.php">XML indentation</a></li>
                                 <li data-keywords="indent indentation html xhtml"><a href="HTMLIndentation.php">HTML indentation</a></li>

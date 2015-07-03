@@ -34,6 +34,20 @@ div, span, li, small
     color: $text-primary-color;
     padding: 5px;
     z-index: 1000;
+
+    #toggle_menu
+    {
+        font-size: 1.2em;
+        position: fixed;
+        top: 16px;
+    }
+
+    h1
+    {
+        margin: 0px;
+        padding: 2px 0px 2px 30px;
+        display: inline-block
+    }
 }
 
 #header *
@@ -48,14 +62,14 @@ div, span, li, small
 #menu
 {
     background-color: $light-primary-color;
-    padding: 45px 10px 0px 10px;
-    
+    padding: 65px 10px 0px 10px;
+
     #search_functionality_text
     {
         margin-bottom: 15px;
         width: 100%;
     }
-    
+
     ul
     {
         padding: 0px 0px 0px 8px;
@@ -73,5 +87,5 @@ div, span, li, small
 
 #content
 {
-    padding-top: 45px;
+    padding-top: 65px;
 }

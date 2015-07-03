@@ -13,3 +13,11 @@
 {
     min-height: 300px;
 }
+
+@media (max-width: 768px) 
+{
+	#source_textarea, #destination_textarea
+	{
+		min-height: 150px;
+	}
+}
