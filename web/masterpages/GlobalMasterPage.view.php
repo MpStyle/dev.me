@@ -99,6 +99,13 @@ use web\localizations\Localization;
                                 <li data-keywords="validation validate xml"><a href="XMLValidation.php">XML validation</a></li>
                             </ul>
                         </li>
+                        <li>
+                            Converters
+                            <ul>
+                                <li><a href="TimestampToDate.php">Timestamp to date</a></li>
+                                <li><a href="DateToTimestamp.php">Date to timestamp</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div id="content" class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
