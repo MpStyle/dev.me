@@ -96,7 +96,7 @@ div, span, li, small
 
 #title
 {
-    font-size: 1.2em;
+    /*font-size: 1.2em;*/
     font-weight: bold;
     margin-top: 0px;
     overflow: hidden;
@@ -108,10 +108,13 @@ div, span, li, small
 
     #editor
     {
-        #web_service_info
-        {
-            clear: both;
-            word-wrap: break-word;
-        }
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    #web_service_info
+    {
+        word-wrap: break-word;
+        margin-top: 30px;
     }
 }

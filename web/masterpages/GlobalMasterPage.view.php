@@ -10,15 +10,15 @@ use web\localizations\Localization;
 <html>
     <head>
         <!-- Start SEO -->
-        <meta name="description" content="<?php echo Localization::getString("short_app_description") ?>"/>
+        <meta name="description" content="<?php echo Localization::getString( "short_app_description" ) ?>"/>
         <link rel="original-source" href="http://www.micene.net/dev.me/" />
         <link rel="canonical" href="http://www.micene.net/dev.me/" />
-        <meta property="og:locale" content="<?php echo strtolower(LocalizationBook::getLocalization()) ?>_<?php echo strtoupper(LocalizationBook::getLocalization()) ?>" />
+        <meta property="og:locale" content="<?php echo strtolower( LocalizationBook::getLocalization() ) ?>_<?php echo strtoupper( LocalizationBook::getLocalization() ) ?>" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="<?php echo Localization::getString("app_motto") ?>" />
-        <meta property="og:description" content="<?php echo Localization::getString("short_app_description") ?>" />
+        <meta property="og:title" content="<?php echo Localization::getString( "app_motto" ) ?>" />
+        <meta property="og:description" content="<?php echo Localization::getString( "short_app_description" ) ?>" />
         <meta property="og:url" content="http://www.micene.net/dev.me/" />
-        <meta property="og:site_name" content="<?php Localization::getString("app_name") ?>" />
+        <meta property="og:site_name" content="<?php Localization::getString( "app_name" ) ?>" />
         <meta property="og:image" content="http://www.micene.net/dev.me/web/images/logo_128.png" />
         <script type="application/ld+json">
             { 
@@ -29,13 +29,13 @@ use web\localizations\Localization;
         </script>
 
         <meta name="twitter:site" content="@MiNi_Group" />
-        <meta name="twitter:title" content="<?php Localization::getString("app_name") ?> | <?php echo Localization::getString("app_motto") ?>" />
-        <meta name="twitter:description" content="<?php echo Localization::getString("short_app_description") ?>" />
+        <meta name="twitter:title" content="<?php Localization::getString( "app_name" ) ?> | <?php echo Localization::getString( "app_motto" ) ?>" />
+        <meta name="twitter:description" content="<?php echo Localization::getString( "short_app_description" ) ?>" />
         <meta name="twitter:creator" content="@mpstyle" />
         <meta name="twitter:image:src" content="http://www.micene.net/dev.me/web/images/logo_1024.png" />
 
-        <meta itemprop="name" content="<?php Localization::getString("app_name") ?>" />
-        <meta itemprop="description" content="<?php echo Localization::getString("short_app_description") ?>" />
+        <meta itemprop="name" content="<?php Localization::getString( "app_name" ) ?>" />
+        <meta itemprop="description" content="<?php echo Localization::getString( "short_app_description" ) ?>" />
         <meta itemprop="image" content="http://www.micene.net/dev.me/web/images/logo_128.png" />
 
         <meta name="language" content="<?php echo LocalizationBook::getLocalization() ?>">
@@ -76,7 +76,7 @@ use web\localizations\Localization;
         <meta name="mobile-web-app-capable" content="yes">
 
         <!-- Windows phone web app -->
-        <meta name="application-name" content="<?php echo Localization::getString("app_name") ?>" />
+        <meta name="application-name" content="<?php echo Localization::getString( "app_name" ) ?>" />
         <meta name="msapplication-TileColor" content="#4285f4" />
         <meta name="msapplication-square70x70logo" content="web/images/smalltile.png" />
         <meta name="msapplication-square150x150logo" content="web/images/mediumtile.png" />
@@ -105,104 +105,104 @@ use web\localizations\Localization;
         <header id="header" class="material_shadow">
             <span id="toggle_menu" class="glyphicon glyphicon-menu-hamburger hidden-sm hidden-md hidden-lg"></span> 
             <h1>
-                <?php echo Localization::getString("app_name") ?>
+                <?php echo Localization::getString( "app_name" ) ?>
             </h1>
         </header>
         <div id="container" class="container-fluid">
             <div class="row">
-                <div id="menu_container" class="hidden-xs col-sm-3 col-md-3 col-lg-3">
+                <div id="menu_container" class="hidden-xs col-sm-3 col-md-3 col-lg-2">
                     <input type="text" id="search_functionality_text" class="form-control" placeholder="Search functionality..." />
                     <ul id="menu">
                         <li>
-                            <?php echo Localization::getString("hex_menu_item") ?>
+                            <?php echo Localization::getString( "hex_menu_item" ) ?>
                             <ul class="nav nav-pills nav-stacked">
-                                <li data-keywords="hex encode encoding"><a href="HexDecode.php">Hex Decode</a></li>
-                                <li data-keywords="hex decode decoding"><a href="HexEncode.php">Hex Encode</a></li>
+                                <li data-keywords="hex encode encoding"><a href="HexDecode">Hex Decode</a></li>
+                                <li data-keywords="hex decode decoding"><a href="HexEncode">Hex Encode</a></li>
                             </ul>
                         </li>
                         <li>
-                            <?php echo Localization::getString("base64_menu_item") ?>
+                            <?php echo Localization::getString( "base64_menu_item" ) ?>
                             <ul class="nav nav-pills nav-stacked">
-                                <li data-keywords="base base64 encode encoding"><a href="Base64Decode.php">Base64 Decode</a></li>
-                                <li data-keywords="base base64 decode decoding"><a href="Base64Encode.php">Base64 Encode</a></li>
+                                <li data-keywords="base base64 encode encoding"><a href="Base64Decode">Base64 Decode</a></li>
+                                <li data-keywords="base base64 decode decoding"><a href="Base64Encode">Base64 Encode</a></li>
                             </ul>
                         </li>
                         <li>
-                            <?php echo Localization::getString("mdx_menu_item") ?>
+                            <?php echo Localization::getString( "mdx_menu_item" ) ?>
                             <ul class="nav nav-pills nav-stacked">
-                                <li data-keywords="hash md md2"><a href="MD2Generator.php">MD2</a></li>
-                                <li data-keywords="hash md md4"><a href="MD4Generator.php">MD4</a></li>
-                                <li data-keywords="hash md md5"><a href="MD5Generator.php">MD5</a></li>
+                                <li data-keywords="hash md md2"><a href="MD2Generator">MD2</a></li>
+                                <li data-keywords="hash md md4"><a href="MD4Generator">MD4</a></li>
+                                <li data-keywords="hash md md5"><a href="MD5Generator">MD5</a></li>
                             </ul>
                         </li>
                         <li>
-                            <?php echo Localization::getString("sha_menu_item") ?>
+                            <?php echo Localization::getString( "sha_menu_item" ) ?>
                             <ul class="nav nav-pills nav-stacked">
-                                <li data-keywords="hash sha sha1 sha256"><a href="SHA256Generator.php">SHA 256</a></li>
-                                <li data-keywords="hash sha sha1 sha512"><a href="SHA512Generator.php">SHA 512</a></li>
+                                <li data-keywords="hash sha sha1 sha256"><a href="SHA256Generator">SHA 256</a></li>
+                                <li data-keywords="hash sha sha1 sha512"><a href="SHA512Generator">SHA 512</a></li>
                             </ul>
                         </li>
 
                         <li>
-                            <?php echo Localization::getString("minify_menu_item") ?>
+                            <?php echo Localization::getString( "minify_menu_item" ) ?>
                             <ul class="nav nav-pills nav-stacked">
-                                <li data-keywords="minify minified html xhtml"><a href="MinifyHTML.php">Minify HTML</a></li>
-                                <li data-keywords="minify minified css style"><a href="MinifyCSS.php">Minify CSS</a></li>
+                                <li data-keywords="minify minified html xhtml"><a href="MinifyHTML">Minify HTML</a></li>
+                                <li data-keywords="minify minified css style"><a href="MinifyCSS">Minify CSS</a></li>
                                 <li data-keywords="minify minified js javascript"><span title="Coming soon" data-toggle="tooltip" data-placement="right">Minify Javascript</span></li>
-                                <li data-keywords="minify minified json"><a href="MinifyJSON.php">Minify JSON</a></li>
+                                <li data-keywords="minify minified json"><a href="MinifyJSON">Minify JSON</a></li>
                             </ul>
                         </li>
                         <li>
-                            <?php echo Localization::getString("text_menu_item") ?>
+                            <?php echo Localization::getString( "text_menu_item" ) ?>
                             <ul class="nav nav-pills nav-stacked">
-                                <li data-keywords="text case upper uppercase"><a href="UpperCase.php">UPPER CASE</a></li>
-                                <li data-keywords="text case lower lowercase"><a href="LowerCase.php">lower case</a></li>
-                                <li data-keywords="text case capitalize"><a href="Capitalize.php">Capitalize</a></li>
+                                <li data-keywords="text case upper uppercase"><a href="UpperCase">UPPER CASE</a></li>
+                                <li data-keywords="text case lower lowercase"><a href="LowerCase">lower case</a></li>
+                                <li data-keywords="text case capitalize"><a href="Capitalize">Capitalize</a></li>
                             </ul>
                         </li>
                         <li>
-                            <?php echo Localization::getString("indentation_menu_item") ?>
+                            <?php echo Localization::getString( "indentation_menu_item" ) ?>
                             <ul class="nav nav-pills nav-stacked">
-                                <li data-keywords="indent indentation json"><a href="JsonIndentation.php">JSON indentation</a></li>
-                                <li data-keywords="indent indentation sql query"><a href="SQLIndentation.php">SQL indentation</a></li>
-                                <li data-keywords="indent indentation xml"><a href="XMLIndentation.php">XML indentation</a></li>
-                                <li data-keywords="indent indentation html xhtml"><a href="HTMLIndentation.php">HTML indentation</a></li>
+                                <li data-keywords="indent indentation json"><a href="JSONIndentation">JSON indentation</a></li>
+                                <li data-keywords="indent indentation sql query"><a href="SQLIndentation">SQL indentation</a></li>
+                                <li data-keywords="indent indentation xml"><a href="XMLIndentation">XML indentation</a></li>
+                                <li data-keywords="indent indentation html xhtml"><a href="HTMLIndentation">HTML indentation</a></li>
                                 <li data-keywords="indent indentation css style"><span title="Coming soon" data-toggle="tooltip" data-placement="right">CSS indentation</span></li>
-                                <li data-keywords="indent indentation js javascript"><a href="JavascriptIndentation.php">Javascript indentation</a></li>
+                                <li data-keywords="indent indentation js javascript"><a href="JavascriptIndentation">Javascript indentation</a></li>
                             </ul>
                         </li>
                         <li>
-                            <?php echo Localization::getString("validation_menu_item") ?>
+                            <?php echo Localization::getString( "validation_menu_item" ) ?>
                             <ul class="nav nav-pills nav-stacked">
-                                <li data-keywords="validation validate json"><a href="JSONValidation.php">JSON validation</a></li>
-                                <li data-keywords="validation validate xml"><a href="XMLValidation.php">XML validation</a></li>
+                                <li data-keywords="validation validate json"><a href="JSONValidation">JSON validation</a></li>
+                                <li data-keywords="validation validate xml"><a href="XMLValidation">XML validation</a></li>
                             </ul>
                         </li>
                         <li>
-                            <?php echo Localization::getString("converters_menu_item") ?>
+                            <?php echo Localization::getString( "converters_menu_item" ) ?>
                             <ul class="nav nav-pills nav-stacked">
-                                <li data-keywords="date datetime time timestamp epoch unix"><a href="TimestampToDate.php">Timestamp to date</a></li>
-                                <li data-keywords="date datetime time timestamp epoch unix"><a href="DateToTimestamp.php">Date to timestamp</a></li>
+                                <li data-keywords="date datetime time timestamp epoch unix"><a href="TimestampToDate">Timestamp to date</a></li>
+                                <li data-keywords="date datetime time timestamp epoch unix"><a href="DateToTimestamp">Date to timestamp</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
-                <div id="content" class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-                    <h1 id="title"></h1>
+                <div id="content" class="col-xs-12 col-sm-9 col-md-9 col-lg-10">
+                    <h2 id="title"></h2>
                     <div id="service_name"></div>
-                    <div id="editor"></div>
+                    <div id="editor" class="row"></div>
 
                     <div class="panel panel-default" id="web_service_info">
                         <div class="panel-heading">
                             <h3 class="panel-title">Web service</h3>
                         </div>
                         <div class="panel-body">
-							<h4>Name</h4>
-							<div><?php echo $this->getWebServiceName() ?></div>
-						
-							<h4>End-point:</h4>
-							<div><?php echo $this->getWebServiceEndPoint() ?></div>
-						
+                            <h4>Name</h4>
+                            <div><?php echo $this->getWebServiceName() ?></div>
+
+                            <h4>End-point:</h4>
+                            <div><?php echo $this->getWebServiceEndPoint() ?></div>
+
                             <h4>Request</h4>
                             <pre><?php echo $this->getWebServiceRequest() ?></pre>
 
@@ -213,5 +213,23 @@ use web\localizations\Localization;
                 </div>
             </div>
         </div>
+
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-1530145-8', 'auto');
+            ga('send', 'pageview');
+
+        </script>
     </body>
 </html>

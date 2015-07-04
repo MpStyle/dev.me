@@ -1,3 +1,5 @@
+#http://samaxes.com/2009/01/more-on-compressing-and-caching-your-site-with-htaccess/
+
 <Files  ~ "\.(view.php|htaccess)$">
   Order allow,deny
   Deny from all
@@ -7,30 +9,71 @@
   Deny from all
 </Files>
 
-RewriteRule ^(Home(\.php)?)?$ Home.php [QSA,L]
-RewriteRule ^Base64Decode$ Base64Decode.php [QSA,L]
-RewriteRule ^Base64Encode$ Base64Encode.php [QSA,L]
-RewriteRule ^Capitalize$ Capitalize.php [QSA,L]
-RewriteRule ^DateToTimestamp$ DateToTimestamp.php [QSA,L]
-RewriteRule ^HexDecode$ HexDecode.php [QSA,L]
-RewriteRule ^HexEncode$ HexEncode.php [QSA,L]
-RewriteRule ^Home$ Home.php [QSA,L]
-RewriteRule ^HTMLIndentation$ HTMLIndentation.php [QSA,L]
-RewriteRule ^index$ index.php [QSA,L]
-RewriteRule ^JsonIndentation$ JsonIndentation.php [QSA,L]
-RewriteRule ^JSONValidation$ JSONValidation.php [QSA,L]
-RewriteRule ^LowerCase$ LowerCase.php [QSA,L]
-RewriteRule ^MD2Generator$ MD2Generator.php [QSA,L]
-RewriteRule ^MD4Generator$ MD4Generator.php [QSA,L]
-RewriteRule ^MD5Generator$ MD5Generator.php [QSA,L]
-RewriteRule ^MinifyCSS$ MinifyCSS.php [QSA,L]
-RewriteRule ^MinifyHTML$ MinifyHTML.php [QSA,L]
-RewriteRule ^MinifyJSON$ MinifyJSON.php [QSA,L]
-RewriteRule ^Settings$ Settings.php [QSA,L]
-RewriteRule ^SHA256Generator$ SHA256Generator.php [QSA,L]
-RewriteRule ^SHA512Generator$ SHA512Generator.php [QSA,L]
-RewriteRule ^SQLIndentation$ SQLIndentation.php [QSA,L]
-RewriteRule ^TimestampToDate$ TimestampToDate.php [QSA,L]
-RewriteRule ^UpperCase$ UpperCase.php [QSA,L]
-RewriteRule ^XMLIndentation$ XMLIndentation.php [QSA,L]
-RewriteRule ^XMLValidation$ XMLValidation.php [QSA,L]
+Options -MultiViews
+RewriteEngine On
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+<ifModule mod_deflate.c>
+  <filesMatch ".(css|js|x?html?|php)$">
+    SetOutputFilter DEFLATE
+  </filesMatch>
+</ifModule>
+
+# BEGIN Expire headers
+<ifModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 seconds"
+  ExpiresByType image/x-icon "access plus 2592000 seconds"
+  ExpiresByType image/jpeg "access plus 2592000 seconds"
+  ExpiresByType image/png "access plus 2592000 seconds"
+  ExpiresByType image/gif "access plus 2592000 seconds"
+  ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
+  ExpiresByType text/css "access plus 604800 seconds"
+  ExpiresByType text/javascript "access plus 216000 seconds"
+  ExpiresByType application/javascript "access plus 216000 seconds"
+  ExpiresByType application/x-javascript "access plus 216000 seconds"
+  ExpiresByType text/html "access plus 600 seconds"
+  ExpiresByType application/xhtml+xml "access plus 600 seconds"
+</ifModule>
+# END Expire headers
+
+# BEGIN Cache-Control Headers
+<ifModule mod_headers.c>
+#  <filesMatch ".(ico|jpe?g|png|gif|swf)$">
+#    Header set Cache-Control "max-age=2592000, public"
+#  </filesMatch>
+  <filesMatch "^vendor/[^\.]+.(css)$">
+    Header set Cache-Control "max-age=604800, public"
+  </filesMatch>
+  <filesMatch "^vendor\/[^\.]+.min.(css)$">
+    Header set Cache-Control "max-age=604800, public"
+  </filesMatch>
+  <filesMatch "^components\/[^\.]+.min.(css)$">
+    Header set Cache-Control "max-age=604800, public"
+  </filesMatch>
+  <filesMatch "^vendor\/[^\.]+.min.(js)$">
+    Header set Cache-Control "max-age=216000, private"
+  </filesMatch>
+  <filesMatch "^components\/[^\.]+.min.(js)$">
+    Header set Cache-Control "max-age=216000, private"
+  </filesMatch>
+#  <filesMatch ".(x?html?|php)$">
+#    Header set Cache-Control "max-age=600, private, must-revalidate"
+#  </filesMatch>
+</ifModule>
+# END Cache-Control Headers
+
+# BEGIN Turn ETags Off
+<ifModule mod_headers.c>
+  Header unset ETag
+</ifModule>
+FileETag None
+# END Turn ETags Off
+ 
+# BEGIN Remove Last-Modified Header
+<ifModule mod_headers.c>
+  Header unset Last-Modified
+</ifModule>
+# END Remove Last-Modified Header
