@@ -92,6 +92,20 @@ div, span, li, small
         padding: 0px;
         margin-left: 0px;
     }
+
+    .sub_menu span
+    {
+        color: rgba(0,0,0,0.4);
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        border-radius: 4px;
+    }
+
+    .sub_menu span:hover
+        {
+        background-color: rgba(255,255,255,0.3)
+    }
 }
 
 #title

@@ -36,7 +36,7 @@ class IndentationWebService extends MRPCJsonWebService
         }
         else
         {
-            $json = json_encode($jsonDecode);
+            $json = json_encode($jsonDecode, JSON_PRETTY_PRINT);
 
             if ($json === false)
             {

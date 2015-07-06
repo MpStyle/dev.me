@@ -68,7 +68,7 @@ use web\localizations\Localization;
         <link rel="apple-touch-icon" sizes="152x152" href="web/images/logo_152_ios.png"/>
         <link rel="apple-touch-icon-precomposed" sizes="128x128" href="web/images/logo_128_ios.png"/>
         <link rel="apple-touch-startup-image" href="web/images/splashscreen_ios.png"/>
-        <meta name="apple-mobile-web-app-status-bar-style" content="#fff"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#455A64"/>
         <meta name="apple-mobile-web-app-capable" content="yes"/>
 
         <!-- Chome app -->
@@ -77,7 +77,7 @@ use web\localizations\Localization;
 
         <!-- Windows phone web app -->
         <meta name="application-name" content="<?php echo Localization::getString( "app_name" ) ?>" />
-        <meta name="msapplication-TileColor" content="#4285f4" />
+        <meta name="msapplication-TileColor" content="#455A64" />
         <meta name="msapplication-square70x70logo" content="web/images/smalltile.png" />
         <meta name="msapplication-square150x150logo" content="web/images/mediumtile.png" />
         <meta name="msapplication-wide310x150logo" content="web/images/widetile.png" />
@@ -115,21 +115,21 @@ use web\localizations\Localization;
                     <ul id="menu">
                         <li>
                             <?php echo Localization::getString( "hex_menu_item" ) ?>
-                            <ul class="nav nav-pills nav-stacked">
+                            <ul class="sub_menu nav nav-pills nav-stacked">
                                 <li data-keywords="hex encode encoding"><a href="HexDecode">Hex Decode</a></li>
                                 <li data-keywords="hex decode decoding"><a href="HexEncode">Hex Encode</a></li>
                             </ul>
                         </li>
                         <li>
                             <?php echo Localization::getString( "base64_menu_item" ) ?>
-                            <ul class="nav nav-pills nav-stacked">
+                            <ul class="sub_menu nav nav-pills nav-stacked">
                                 <li data-keywords="base base64 encode encoding"><a href="Base64Decode">Base64 Decode</a></li>
                                 <li data-keywords="base base64 decode decoding"><a href="Base64Encode">Base64 Encode</a></li>
                             </ul>
                         </li>
                         <li>
                             <?php echo Localization::getString( "mdx_menu_item" ) ?>
-                            <ul class="nav nav-pills nav-stacked">
+                            <ul class="sub_menu nav nav-pills nav-stacked">
                                 <li data-keywords="hash md md2"><a href="MD2Generator">MD2</a></li>
                                 <li data-keywords="hash md md4"><a href="MD4Generator">MD4</a></li>
                                 <li data-keywords="hash md md5"><a href="MD5Generator">MD5</a></li>
@@ -137,7 +137,7 @@ use web\localizations\Localization;
                         </li>
                         <li>
                             <?php echo Localization::getString( "sha_menu_item" ) ?>
-                            <ul class="nav nav-pills nav-stacked">
+                            <ul class="sub_menu nav nav-pills nav-stacked">
                                 <li data-keywords="hash sha sha1 sha256"><a href="SHA256Generator">SHA 256</a></li>
                                 <li data-keywords="hash sha sha1 sha512"><a href="SHA512Generator">SHA 512</a></li>
                             </ul>
@@ -145,7 +145,7 @@ use web\localizations\Localization;
 
                         <li>
                             <?php echo Localization::getString( "minify_menu_item" ) ?>
-                            <ul class="nav nav-pills nav-stacked">
+                            <ul class="sub_menu nav nav-pills nav-stacked">
                                 <li data-keywords="minify minified html xhtml"><a href="MinifyHTML">Minify HTML</a></li>
                                 <li data-keywords="minify minified css style"><a href="MinifyCSS">Minify CSS</a></li>
                                 <li data-keywords="minify minified js javascript"><span title="Coming soon" data-toggle="tooltip" data-placement="right">Minify Javascript</span></li>
@@ -154,7 +154,7 @@ use web\localizations\Localization;
                         </li>
                         <li>
                             <?php echo Localization::getString( "text_menu_item" ) ?>
-                            <ul class="nav nav-pills nav-stacked">
+                            <ul class="sub_menu nav nav-pills nav-stacked">
                                 <li data-keywords="text case upper uppercase"><a href="UpperCase">UPPER CASE</a></li>
                                 <li data-keywords="text case lower lowercase"><a href="LowerCase">lower case</a></li>
                                 <li data-keywords="text case capitalize"><a href="Capitalize">Capitalize</a></li>
@@ -162,25 +162,25 @@ use web\localizations\Localization;
                         </li>
                         <li>
                             <?php echo Localization::getString( "indentation_menu_item" ) ?>
-                            <ul class="nav nav-pills nav-stacked">
+                            <ul class="sub_menu nav nav-pills nav-stacked">
                                 <li data-keywords="indent indentation json"><a href="JSONIndentation">JSON indentation</a></li>
                                 <li data-keywords="indent indentation sql query"><a href="SQLIndentation">SQL indentation</a></li>
                                 <li data-keywords="indent indentation xml"><a href="XMLIndentation">XML indentation</a></li>
                                 <li data-keywords="indent indentation html xhtml"><a href="HTMLIndentation">HTML indentation</a></li>
                                 <li data-keywords="indent indentation css style"><span title="Coming soon" data-toggle="tooltip" data-placement="right">CSS indentation</span></li>
-                                <li data-keywords="indent indentation js javascript"><a href="JavascriptIndentation">Javascript indentation</a></li>
+                                <li data-keywords="indent indentation js javascript"><span title="Coming soon" data-toggle="tooltip" data-placement="right">Javascript indentation</span></li>
                             </ul>
                         </li>
                         <li>
                             <?php echo Localization::getString( "validation_menu_item" ) ?>
-                            <ul class="nav nav-pills nav-stacked">
+                            <ul class="sub_menu nav nav-pills nav-stacked">
                                 <li data-keywords="validation validate json"><a href="JSONValidation">JSON validation</a></li>
                                 <li data-keywords="validation validate xml"><a href="XMLValidation">XML validation</a></li>
                             </ul>
                         </li>
                         <li>
                             <?php echo Localization::getString( "converters_menu_item" ) ?>
-                            <ul class="nav nav-pills nav-stacked">
+                            <ul class="sub_menu nav nav-pills nav-stacked">
                                 <li data-keywords="date datetime time timestamp epoch unix"><a href="TimestampToDate">Timestamp to date</a></li>
                                 <li data-keywords="date datetime time timestamp epoch unix"><a href="DateToTimestamp">Date to timestamp</a></li>
                             </ul>

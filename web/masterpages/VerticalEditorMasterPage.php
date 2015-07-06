@@ -37,23 +37,24 @@ class VerticalEditorMasterPage extends MAbstractMasterPageController
         $this->destinationTextAreaPlaceholder = $destinationTextAreaPlaceholder;
     }
 
-	public function setWebServiceName($webServiceName)
+    public function setWebServiceName( $webServiceName )
     {
-        parent::getMasterPage()->setWebServiceName($webServiceName);
+        parent::getMasterPage()->setWebServiceName( $webServiceName );
     }
 
-    public function setWebServiceRequest($webServiceRequest)
+    public function setWebServiceRequest( $webServiceRequest )
     {
-        parent::getMasterPage()->setWebServiceRequest($webServiceRequest);
+        parent::getMasterPage()->setWebServiceRequest( $webServiceRequest );
     }
 
-    public function setWebServiceResponse($webServiceResponse)
+    public function setWebServiceResponse( $webServiceResponse )
     {
-        parent::getMasterPage()->setWebServiceResponse($webServiceResponse);
+        parent::getMasterPage()->setWebServiceResponse( $webServiceResponse );
     }
-	
-	public function setWebServiceEndPoint($webServiceEndPoint)
+
+    public function setWebServiceEndPoint( $webServiceEndPoint )
     {
-        parent::getMasterPage()->setWebServiceEndPoint($webServiceEndPoint);
+        parent::getMasterPage()->setWebServiceEndPoint( $webServiceEndPoint );
     }
+
 }
