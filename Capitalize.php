@@ -15,6 +15,7 @@ class Capitalize extends BasePage
 		
         parent::addMasterPagePart('title', 'title');
         parent::addMasterPagePart('service_name', 'service_name');
+        parent::addMasterPagePart("style_js", "style_js");
 		
         parent::getMasterPage()->setSourceTextAreaPlaceholder('Insert here the text to capitalized...');
         parent::getMasterPage()->setDestinationTextAreaPlaceholder('Capitalized text...');
@@ -24,8 +25,7 @@ class Capitalize extends BasePage
 		parent::getMasterPage()->setWebServiceRequest('{jsonrpc: "2.0", method: "capitalize", params: {text: "hello world"}, id: 1}');
 		parent::getMasterPage()->setWebServiceResponse('{"jsonrpc":"2.0","result":{"result_text":"Hello world"},"id":1}');
         
-        parent::addJavascript('web/javascripts/Text.min.js');
-        parent::addCss('web/css/Capitalize.css');
+        
         
         parent::setPageTitle("Capitalize - Dev.me");
     }

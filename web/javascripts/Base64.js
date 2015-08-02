@@ -1,6 +1,11 @@
 function Base64()
 {
+    var outerThis = this;
     this.serviceName = $('#service_name_hidden').val();
+    
+    $('#source_textarea').keyup(function () {
+        outerThis.callWS();
+    });
 };
 
 Base64.prototype.callWS = function () {
@@ -21,10 +26,4 @@ Base64.prototype.callWS = function () {
     );
 };
 
-$(function () {
-    var base64 = new Base64();
 
-    $('#source_textarea').keyup(function () {
-        base64.callWS();
-    });
-});

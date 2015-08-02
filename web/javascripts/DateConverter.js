@@ -16,8 +16,15 @@ function DateConverter()
 
         outerThis.callWS();
     }
+    
+    $('#format_select').change(function () {
+        outerThis.callWS();
+    });
+
+    $('#source_text').keyup(function () {
+        outerThis.callWS();
+    });
 }
-;
 
 DateConverter.prototype.callWS = function () {
     var $formatSelect = $('#format_select');
@@ -61,15 +68,3 @@ DateConverter.prototype.callWS = function () {
     }
     );
 };
-
-$(function () {
-    var dateConverter = new DateConverter();
-
-    $('#format_select').change(function () {
-        dateConverter.callWS();
-    });
-
-    $('#source_text').keyup(function () {
-        dateConverter.callWS();
-    });
-});

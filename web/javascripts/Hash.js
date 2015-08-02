@@ -1,6 +1,11 @@
 function Hash()
 {
+    var outerThis = this;
     this.serviceName = $('#service_name_hidden').val();
+    
+    $('#source_textarea').keyup(function () {
+        outerThis.callWS();
+    });
 };
 
 Hash.prototype.callWS = function () {
@@ -21,10 +26,4 @@ Hash.prototype.callWS = function () {
     );
 };
 
-$(function () {
-    var hash = new Hash();
 
-    $('#source_textarea').keyup(function () {
-        hash.callWS();
-    });
-});

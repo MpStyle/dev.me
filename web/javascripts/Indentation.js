@@ -1,6 +1,11 @@
 function Indentation()
 {
+    var outerThis = this;
     this.serviceName = $('#service_name_hidden').val();
+
+    $('#source_textarea').keyup(function () {
+        outerThis.callWS();
+    });
 };
 
 Indentation.prototype.callWS = function () {
@@ -32,11 +37,3 @@ Indentation.prototype.callWS = function () {
     }
     );
 };
-
-$(function () {
-    var indentation = new Indentation();
-
-    $('#source_textarea').keyup(function () {
-        indentation.callWS();
-    });
-});

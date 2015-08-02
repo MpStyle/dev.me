@@ -16,6 +16,7 @@ class MinifyHTML extends BasePage
 
         parent::addMasterPagePart( 'title', 'title' );
         parent::addMasterPagePart( 'service_name', 'service_name' );
+        parent::addMasterPagePart("style_js", "style_js");
 
         parent::getMasterPage()->setWebServiceName( 'SHA512 generator' );
         parent::getMasterPage()->setWebServiceEndPoint( 'http://www.micene.net/dev.me/web/web_services/MinifyWebService.php' );
@@ -29,8 +30,7 @@ class MinifyHTML extends BasePage
         parent::getMasterPage()->setSourceTextAreaPlaceholder( 'Insert here the text to minify...' );
         parent::getMasterPage()->setDestinationTextAreaPlaceholder( 'Minified text...' );
 
-        parent::addJavascript( 'web/javascripts/Minify.min.js' );
-        parent::addCss( 'web/css/MinifyHTML.css' );
+        
 
         parent::setPageTitle( "Minify HTML - Dev.me" );
     }

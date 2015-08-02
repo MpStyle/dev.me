@@ -32,3 +32,12 @@
     </div>
 
 </div>
+
+<div id="style_js">     
+    <link href="web/css/<?php echo basename( __FILE__, '.view.php' ); ?>.css" rel="stylesheet" type="text/css"> 
+    <script>
+        $(function () {
+            var dateConverter = new DateConverter();
+        });
+    </script>
+</div>

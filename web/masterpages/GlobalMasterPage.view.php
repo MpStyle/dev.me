@@ -88,31 +88,28 @@ use web\localizations\Localization;
 
         <title></title>
 
-        <script src="vendor/components/jquery/jquery.min.js" type="text/javascript"></script>
-        <script src="vendor/components/jquery/jquery-migrate.min.js" type="text/javascript"></script>
-
         <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="vendor/twbs/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
-        <script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 
-        <script src="web/javascripts/json_rpc_client/jquery.jsonrpcclient.min.js" type="text/javascript"></script>
-
+        <link href="vendor/eonasdan/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
+        
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
 
-        <script src="web/javascripts/GlobalMasterPage.min.js" type="text/javascript"></script>
+        <script src="web/javascripts/dev.me.min.js" type="text/javascript"></script>
     </head>
     <body>
         <header id="header" class="material_shadow">
             <span id="toggle_menu" class="glyphicon glyphicon-menu-hamburger hidden-sm hidden-md hidden-lg"></span> 
             <h1>
-                <?php echo Localization::getString( "app_name" ) ?>
+                <a href="Home"><?php echo Localization::getString( "app_name" ) ?></a>
             </h1>
         </header>
         <div id="container" class="container-fluid">
             <div class="row">
-                <div id="menu_container" class="hidden-xs col-sm-3 col-md-3 col-lg-2">
+                <div id="dark_side_of_menu"></div>
+                <div id="sidebar" class="hidden-xs">
                     <input type="text" id="search_functionality_text" class="form-control" placeholder="Search functionality..." />
-                    <ul id="menu">
+                    <ul id="sidebar_menu">
                         <li>
                             <?php echo Localization::getString( "hex_menu_item" ) ?>
                             <ul class="sub_menu nav nav-pills nav-stacked">
@@ -148,7 +145,7 @@ use web\localizations\Localization;
                             <ul class="sub_menu nav nav-pills nav-stacked">
                                 <li data-keywords="minify minified html xhtml"><a href="MinifyHTML">Minify HTML</a></li>
                                 <li data-keywords="minify minified css style"><a href="MinifyCSS">Minify CSS</a></li>
-                                <li data-keywords="minify minified js javascript"><span title="Coming soon" data-toggle="tooltip" data-placement="right">Minify Javascript</span></li>
+                                <li data-keywords="minify minified js javascript"><span title="Coming soon" data-toggle="tooltip" data-placement="bottom">Minify Javascript</span></li>
                                 <li data-keywords="minify minified json"><a href="MinifyJSON">Minify JSON</a></li>
                             </ul>
                         </li>
@@ -161,14 +158,23 @@ use web\localizations\Localization;
                             </ul>
                         </li>
                         <li>
+                            Colors
+                            <ul class="sub_menu nav nav-pills nav-stacked">
+                                <li data-keywords="rgba rgb color"><a href="ShowRGBAColor.php">Show RGB color</a></li>
+                                <li data-keywords="hex color"><a href="ShowHexColor.php">Show HEX color</a></li>
+                                <li data-keywords="rgb hex color"><a href="FromRGBToHexColor.php">From RGB to Hex color</a></li>
+                                <li data-keywords="rgb hex color"><a href="FromHexToRGBColor.php">From Hex to RGB color</a></li>
+                            </ul>
+                        </li>
+                        <li>
                             <?php echo Localization::getString( "indentation_menu_item" ) ?>
                             <ul class="sub_menu nav nav-pills nav-stacked">
                                 <li data-keywords="indent indentation json"><a href="JSONIndentation">JSON indentation</a></li>
                                 <li data-keywords="indent indentation sql query"><a href="SQLIndentation">SQL indentation</a></li>
                                 <li data-keywords="indent indentation xml"><a href="XMLIndentation">XML indentation</a></li>
                                 <li data-keywords="indent indentation html xhtml"><a href="HTMLIndentation">HTML indentation</a></li>
-                                <li data-keywords="indent indentation css style"><span title="Coming soon" data-toggle="tooltip" data-placement="right">CSS indentation</span></li>
-                                <li data-keywords="indent indentation js javascript"><span title="Coming soon" data-toggle="tooltip" data-placement="right">Javascript indentation</span></li>
+                                <li data-keywords="indent indentation css style"><span title="Coming soon" data-toggle="tooltip" data-placement="bottom">CSS indentation</span></li>
+                                <li data-keywords="indent indentation js javascript"><span title="Coming soon" data-toggle="tooltip" data-placement="bottom">Javascript indentation</span></li>
                             </ul>
                         </li>
                         <li>
@@ -187,7 +193,7 @@ use web\localizations\Localization;
                         </li>
                     </ul>
                 </div>
-                <div id="content" class="col-xs-12 col-sm-9 col-md-9 col-lg-10">
+                <div id="content" class="">
                     <h2 id="title"></h2>
                     <div id="service_name"></div>
                     <div id="editor" class="row"></div>
@@ -210,6 +216,8 @@ use web\localizations\Localization;
                             <pre><?php echo $this->getWebServiceResponse() ?></pre>
                         </div>
                     </div>
+                    
+                    <div id="style_js"></div>
                 </div>
             </div>
         </div>

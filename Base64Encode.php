@@ -16,6 +16,7 @@ class Base64Encode extends BasePage
 
         parent::addMasterPagePart( 'title', 'title' );
         parent::addMasterPagePart( 'service_name', 'service_name' );
+        parent::addMasterPagePart( "style_js", "style_js" );
 
         parent::getMasterPage()->setSourceTextAreaPlaceholder( 'Insert here the text to encode...' );
         parent::getMasterPage()->setDestinationTextAreaPlaceholder( 'Encoded text...' );
@@ -25,8 +26,7 @@ class Base64Encode extends BasePage
         parent::getMasterPage()->setWebServiceRequest( '{jsonrpc: "2.0", method: "encode", params: {text: "Hello world"}, id: 1}' );
         parent::getMasterPage()->setWebServiceResponse( '{"jsonrpc":"2.0","result":{"result_text":"SGVsbG8gd29ybGQ="},"id":1}' );
 
-        parent::addJavascript( 'web/javascripts/Base64.min.js' );
-        parent::addCss( 'web/css/Base64Encode.css' );
+
 
         parent::setPageTitle( "Base64 encode - Dev.me" );
     }

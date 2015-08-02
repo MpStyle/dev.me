@@ -1,8 +1,13 @@
 function Minify()
 {
+    var outerThis = this;
     this.serviceName = $('#service_name_hidden').val();
-};
 
+    $('#source_textarea').keyup(function () {
+        outerThis.callWS();
+    });
+};
+ 
 Minify.prototype.callWS = function () {
     $("#destination_textarea").val('');
     $("#destination_textarea").attr('placeholder','');
@@ -35,8 +40,4 @@ Minify.prototype.callWS = function () {
 
 $(function () {
     var minify = new Minify();
-
-    $('#source_textarea').keyup(function () {
-        minify.callWS();
-    });
 });

@@ -1,12 +1,17 @@
 function Text()
 {
+    var outerThis = this;
     this.serviceName = $('#service_name_hidden').val();
+
+    $('#source_textarea').keyup(function () { 
+        outerThis.callWS();
+    });
 };
 
 Text.prototype.callWS = function () {
     $("#destination_textarea").val('');
     $("#destination_textarea").attr('placeholder','');
-    
+     
     var outherThis=this;
     var foo = new $.JsonRpcClient({ajaxUrl: 'web/web_services/TextWebService.php'});
     foo.call(
@@ -19,12 +24,7 @@ Text.prototype.callWS = function () {
     }, function (error) {
     }
     );
-};
+}; 
 
-$(function () {
-    var text = new Text();
 
-    $('#source_textarea').keyup(function () {
-        text.callWS();
-    });
-});
+ 

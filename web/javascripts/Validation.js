@@ -1,6 +1,11 @@
 function Validation()
 {
+    var outerThis = this;
     this.serviceName = $('#service_name_hidden').val();
+
+    $('#source_textarea').keyup(function () {
+        outerThis.callWS();
+    });
 };
 
 Validation.prototype.callWS = function () {    
@@ -29,10 +34,4 @@ Validation.prototype.callWS = function () {
     );
 };
 
-$(function () {
-    var validation = new Validation();
 
-    $('#source_textarea').keyup(function () {
-        validation.callWS();
-    });
-});

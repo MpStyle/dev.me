@@ -12,6 +12,7 @@ class Home extends BasePage
         
         parent::setMasterPage(new GlobalMasterPage($this));
         parent::addMasterPagePart('content', 'content');
+        parent::addMasterPagePart("style_js", "style_js");
         
         parent::addCss('web/css/Home.css');
         

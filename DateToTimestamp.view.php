@@ -12,7 +12,7 @@
 <div id="editor">
 
     <input type="hidden" name="format_select" id="format_select" value="Y/m/d H:i:s" />
-    
+
     <div class="row">
         <div id="destination_text_container" class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class='input-group date' id='datetimepicker5'>
@@ -30,4 +30,13 @@
         </div>
     </div>
 
+</div>
+
+<div id="style_js">     
+    <link href="web/css/<?php echo basename( __FILE__, '.view.php' ); ?>.css" rel="stylesheet" type="text/css"> 
+    <script>
+        $(function () {
+            var dateConverter = new DateConverter();
+        });
+    </script>
 </div>

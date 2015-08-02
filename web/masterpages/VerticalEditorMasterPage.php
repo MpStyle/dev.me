@@ -15,6 +15,7 @@ class VerticalEditorMasterPage extends MAbstractMasterPageController
         parent::__construct(__DIR__ . '/VerticalEditorMasterPage.view.php', $parent);
         parent::setMasterPage(new GlobalMasterPage($parent));
         parent::addMasterPagePart("editor", "editor");
+        parent::addMasterPagePart("style_js", "style_js");
     }
     
     function getSourceTextAreaPlaceholder()

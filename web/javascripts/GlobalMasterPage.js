@@ -1,77 +1,107 @@
 function GlobalMasterPage()
 {
+    var outerThis = this;
     $('[data-toggle="tooltip"]').tooltip();
-    
-    $("#menu *[data-keywords]").each(function(){
-        $(this).parent('ul').parent('li').data('keywords', $(this).data('keywords'));
-    });
-}
-;
 
-GlobalMasterPage.prototype.functionalitySearch=function(search)
+    $("#sidebar_menu *[data-keywords]").each(function () {
+        var keywords = $(this).data('keywords') + $(this).parent('ul').parent('li').data('keywords');
+        $(this).parent('ul').parent('li').data('keywords', keywords);
+    });
+
+    $("#toggle_menu, #dark_side_of_menu").click(function () {
+        outerThis.toggleMenu();
+    });
+
+    $('#search_functionality_text').keyup(function () {
+        outerThis.functionalitySearch($(this).val());
+    });
+    outerThis.functionalitySearch($('#search_functionality_text').val());
+
+    outerThis.webApp();
+    
+    var hash=window.location.hash.replace('#','');
+    outerThis.loadPage(hash);
+}
+
+GlobalMasterPage.prototype.webApp = function ()
 {
-    // If "search" is empty, it shows every items of the menù
-    if(search.length<=0)
+    var outerThis = this;
+    $("#sidebar_menu li a").each(function () {
+        $(this).data("href", $(this).attr("href"));
+        $(this).attr("href", "#");
+
+        $(this).click(function () {
+            outerThis.loadPage($(this).data("href"));
+        });
+    });
+};
+
+GlobalMasterPage.prototype.loadPage = function (url) {
+    $.get(url, function(data) {
+        var $data=$(data);
+        document.title = $data.filter('title').text();        
+        $("#content").html($(data).filter("#container").find("#content").html());
+        window.location.hash=url;
+    }, "html");
+};
+
+GlobalMasterPage.prototype.functionalitySearch = function (search)
+{
+    // If "search" is empty, every items of the menu will be diplayed
+    if (search.length <= 0)
     {
-        $("#menu *[data-keywords], #menu li").show();
+        $("#sidebar_menu *[data-keywords], #sidebar_menu li").show();
         return;
     }
-    
-    var searchedWords=search.toLowerCase().split(' ');
-    
-    $("#menu *[data-keywords], #menu li").each(function(){
-        console.log($(this).data("keywords"));
-        var keywords=$(this).data("keywords").split(' ');
-        var found=false;
-        
-        for (var i=0; i<searchedWords.length && !found; i++)
+
+    var searchedWords = search.toLowerCase().split(' ');
+
+
+    $("#sidebar_menu *[data-keywords], #sidebar_menu li").each(function () {
+        var keywords = $(this).data("keywords").split(' ');
+        var found = false;
+
+        for (var i = 0; i < searchedWords.length && !found; i++)
         {
-            for (var j=0; j<keywords.length && !found; j++)
+            for (var j = 0; j < keywords.length && !found; j++)
             {
-                if( keywords[j].indexOf(searchedWords[i])!==-1 )
+                if (keywords[j].indexOf(searchedWords[i]) !== -1)
                 {
-                    found=found || true;
+                    found = found || true;
                 }
-            }    
+            }
         }
-        
-        if( found )
+
+        if (found === true)
         {
             $(this).show();
         }
-        else
+        else 
         {
             $(this).hide();
         }
     });
-};
+}; 
 
 GlobalMasterPage.prototype.toggleMenu = function ()
 {
-    if ($('#menu_container').is(':hidden'))
+    if ($('#sidebar').is(':hidden'))
     {
-        $("#menu_container").hide();
-        $("#menu_container").removeClass("hidden-xs");
+        $("#sidebar").hide();
+        $("#sidebar").removeClass("hidden-xs");
+        $("#dark_side_of_menu").show();
     }
 
-    $("#menu_container").toggle(function () {
-        if ($('#menu_container').is(':hidden'))
+    $("#sidebar").toggle(function () {
+        if ($('#sidebar').is(':hidden'))
         {
-            $("#menu_container").addClass("hidden-xs");
-            $("#menu_container").show();
+            $("#sidebar").addClass("hidden-xs");
+            $("#sidebar").show();
+            $("#dark_side_of_menu").hide();
         }
     });
-    $("#content").toggle();
 };
 
 $(function () {
     var globalMasterPage = new GlobalMasterPage();
-
-    $("#toggle_menu").click(function () {
-        globalMasterPage.toggleMenu();
-    });
-    
-    $('#search_functionality_text').keyup(function(){
-        globalMasterPage.functionalitySearch($(this).val());
-    });
 });

@@ -15,6 +15,7 @@ class JSONIndentation extends BasePage
         
         parent::addMasterPagePart('title', 'title');
         parent::addMasterPagePart('service_name', 'service_name');
+        parent::addMasterPagePart("style_js", "style_js");
         
         parent::getMasterPage()->setWebServiceName( 'JSON indentation' );
         parent::getMasterPage()->setWebServiceEndPoint( 'http://www.micene.net/dev.me/web/web_services/IndentationWebService.php' );
@@ -48,8 +49,7 @@ class JSONIndentation extends BasePage
         parent::getMasterPage()->setSourceTextAreaPlaceholder('Insert here the text to indent...');
         parent::getMasterPage()->setDestinationTextAreaPlaceholder('Indented text...');
         
-        parent::addJavascript('web/javascripts/Indentation.min.js');
-        parent::addCss('web/css/JSONIndentation.css');
+        
         
         parent::setPageTitle("JSON indentation - Dev.me");
     }

@@ -1,13 +1,18 @@
 function Hex()
 {
+    var outerThis = this;
     this.serviceName = $('#service_name_hidden').val();
-};
+
+    $('#source_textarea').keyup(function () {
+        outerThis.callWS();
+    });
+}
 
 Hex.prototype.callWS = function () {
     $("#destination_textarea").val('');
-    $("#destination_textarea").attr('placeholder','');
-    
-    var outherThis=this;
+    $("#destination_textarea").attr('placeholder', '');
+
+    var outherThis = this;
     var foo = new $.JsonRpcClient({ajaxUrl: 'web/web_services/HexWebService.php'});
     foo.call(
             outherThis.serviceName
@@ -21,10 +26,6 @@ Hex.prototype.callWS = function () {
     );
 };
 
-$(function () {
-    var hex = new Hex();
+Hex.prototype.setTextAreaheight
 
-    $('#source_textarea').keyup(function () {
-        hex.callWS();
-    });
-});
+

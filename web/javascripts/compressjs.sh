@@ -1,78 +1,34 @@
 #!/bin/bash
 
-# Constants
-SERVICE_URL=http://closure-compiler.appspot.com/compile
-#NEWFILE="c`date +"%d%m%y"`.js"
-#this specifies last arg as destination 
-for NEWFILE in $*; do :; done
+#rm -rf dev.me.min.js
+#cat ../../vendor/components/jquery/jquery.min.js ../../vendor/components/jquery/jquery-migrate.min.js ../../vendor/twbs/bootstrap/dist/js/bootstrap.min.js ../../vendor/eonasdan/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js ../../web/javascripts/json_rpc_client/jquery.jsonrpcclient.min.js *.js > dev.me.js
+#java -jar /usr/bin/yuicompressor-2.4.8.jar --preserve-semi --type js -o dev.me.min.js dev.me.js
+#rm -rf dev.me.js
 
-# Check if files to compile are provided
-if [ $# -eq 0 ]
-then
-	echo 'Nothing to compile. Specify input files as command arguments. E.g.'
-	echo './compressjs file1.js file2.js file3.js'
-	exit
-fi
+DIRECTORY_TO_OBSERVE="./*.js"     
 
-# Itearate through all files
-process_files=false
-for f in $*
-do
-        if [ ${f} != $NEWFILE ]
-        then
-                if [ -r ${f} ]
-                then
-                        code="${code} --data-urlencode js_code@${f}"
-                        # Test whether at least one of the input file is newer than the output file
-                        if [ ${f} -nt $NEWFILE ]; then
-						    process_files=true
-						fi
-                else
-                        echo "File ${f} does not exist or is not readable. Skipped."
-                fi
-        fi
+function block_for_change {
+  inotifywait -r \
+    -e modify,move,create,delete \
+    $DIRECTORY_TO_OBSERVE
+}
+
+function build {
+    echo "Rimozione dev.me.min.js in corso..."
+    rm -rf dev.me.min.js
+
+    echo "Merge and minify js files..."
+    cat ../../vendor/components/jquery/jquery.min.js ../../vendor/components/jquery/jquery-migrate.min.js ../../vendor/twbs/bootstrap/dist/js/bootstrap.min.js ../../vendor/moment/moment/moment.js ../../vendor/eonasdan/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js ../../web/javascripts/json_rpc_client/jquery.jsonrpcclient.min.js *.js > dev.me.js
+    java -jar /usr/bin/yuicompressor-2.4.8.jar --preserve-semi --type js -o dev.me.min.js dev.me.js
+
+    echo "Remove temp file..."
+    rm -rf dev.me.js
+
+    echo "DONE!"
+}
+
+build
+
+while block_for_change; do
+  build
 done
-
-if ! ${process_files}
-then
-	echo "Already up to date."
-	exit 0
-fi
-
-# Send request
-curl \
---url ${SERVICE_URL} \
---header 'Content-type: application/x-www-form-urlencoded' \
-${code} \
---data output_format=json \
---data output_info=compiled_code \
---data output_info=statistics \
---data output_info=errors \
---data compilation_level=SIMPLE_OPTIMIZATIONS |
-
-python -c '
-import json, sys
-data = json.load(sys.stdin)
-
-if "errors" in data:
-	print "### COMPILATION FAILED WITH ERRORS"
-	for err in data["errors"]:
-		file = sys.argv[int(err["file"].replace("Input_", "")) + 1]
-		print "File: %s, %d:%d" % (file, err["lineno"], err["charno"])
-		print "Error: %s" % err["error"]
-		print "Line: %s" % err["line"]
-		
-	print "\nBuild failed.\n"
-	
-else:
-	print "### COMPILATION COMPLETED"
-	print "Original size: %db, gziped: %db" % (data["statistics"]["originalSize"], data["statistics"]["originalGzipSize"])
-	print "Compressed size: %db, gziped: %db" % (data["statistics"]["compressedSize"], data["statistics"]["compressedGzipSize"])
-	print "Compression rate: %.2f" % (float(data["statistics"]["compressedSize"]) / int(data["statistics"]["originalSize"]))
-
-	filename = "'${NEWFILE}'"
-	with open(filename, "w") as f:
-		f.write(data["compiledCode"])
-
-	print "\nBuild file %s created.\n" % filename
-' $@

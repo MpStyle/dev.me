@@ -15,6 +15,7 @@ class JSONValidation extends BasePage
         
         parent::addMasterPagePart('title', 'title');
         parent::addMasterPagePart('service_name', 'service_name');
+        parent::addMasterPagePart("style_js", "style_js");
         
         parent::getMasterPage()->setWebServiceName( 'JSON validation' );
         parent::getMasterPage()->setWebServiceEndPoint( 'http://www.micene.net/dev.me/web/web_services/ValidationWebService.php' );
@@ -23,8 +24,7 @@ class JSONValidation extends BasePage
         
         parent::getMasterPage()->setEditorTextAreaPlaceholder('Insert here the json to validate...');
         
-        parent::addJavascript('web/javascripts/Validation.min.js');
-        parent::addCss('web/css/JSONValidation.css');
+        
         
         parent::setPageTitle("JSON validation - Dev.me");
     }

@@ -14,5 +14,6 @@ namespace web\masterpages;
         <textarea id="destination_textarea" class="form-control" placeholder="<?php echo $this->getDestinationTextAreaPlaceholder() ?>" readonly></textarea>    
     </div>
 
-
 </div>
+
+<div id="style_js"></div>

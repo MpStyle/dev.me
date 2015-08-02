@@ -14,6 +14,7 @@ class HexDecode extends BasePage
         
         parent::addMasterPagePart('title', 'title');
         parent::addMasterPagePart('service_name', 'service_name');
+        parent::addMasterPagePart("style_js", "style_js");
         
         parent::getMasterPage()->setWebServiceName( 'Hex encode' );
         parent::getMasterPage()->setWebServiceEndPoint( 'http://www.micene.net/dev.me/web/web_services/HexWebService.php' );
@@ -23,8 +24,7 @@ class HexDecode extends BasePage
         parent::getMasterPage()->setSourceTextAreaPlaceholder('Insert here the text to decode...');
         parent::getMasterPage()->setDestinationTextAreaPlaceholder('Decoded text...');
         
-        parent::addJavascript('web/javascripts/Hex.min.js');
-        parent::addCss('web/css/HexDecode.css');
+        
         
         parent::setPageTitle("Hex decode - Dev.me");
     }

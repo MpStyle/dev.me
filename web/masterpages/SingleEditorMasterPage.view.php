@@ -10,3 +10,5 @@ namespace web\masterpages;
         <textarea id="source_textarea" class="form-control" placeholder="<?php echo $this->getEditorTextAreaPlaceholder() ?>"></textarea>
     </div>
 </div>
+
+<div id="style_js"></div>

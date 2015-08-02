@@ -14,6 +14,7 @@ class SingleEditorMasterPage extends MAbstractMasterPageController
         parent::__construct( __DIR__ . '/SingleEditorMasterPage.view.php', $parent );
         parent::setMasterPage( new GlobalMasterPage( $parent ) );
         parent::addMasterPagePart( "editor", "editor" );
+        parent::addMasterPagePart("style_js", "style_js");
     }
 
     public function getEditorTextAreaPlaceholder()

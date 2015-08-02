@@ -15,6 +15,7 @@ class LowerCase extends BasePage
 		
         parent::addMasterPagePart('title', 'title');
         parent::addMasterPagePart('service_name', 'service_name');
+        parent::addMasterPagePart("style_js", "style_js");
 		
         parent::getMasterPage()->setSourceTextAreaPlaceholder('Insert here the text to...');
         parent::getMasterPage()->setDestinationTextAreaPlaceholder('Lower case text...');
@@ -24,8 +25,7 @@ class LowerCase extends BasePage
 		parent::getMasterPage()->setWebServiceRequest('{jsonrpc: "2.0", method: "toLowerCase", params: {text: "HELLO World"}, id: 1}');
 		parent::getMasterPage()->setWebServiceResponse('{"jsonrpc":"2.0","result":{"result_text":"hello world"},"id":1}');
         
-        parent::addJavascript('web/javascripts/Text.min.js');
-        parent::addCss('web/css/LowerCase.css');
+        
         
         parent::setPageTitle("Lower case - Dev.me");
     }

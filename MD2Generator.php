@@ -15,6 +15,7 @@ class MD2Generator extends BasePage
         
         parent::addMasterPagePart('title', 'title');
         parent::addMasterPagePart('service_name', 'service_name');
+        parent::addMasterPagePart("style_js", "style_js");
         
         parent::getMasterPage()->setWebServiceName( 'MD2 generator' );
         parent::getMasterPage()->setWebServiceEndPoint( 'http://www.micene.net/dev.me/web/web_services/HashWebService.php' );
@@ -24,8 +25,7 @@ class MD2Generator extends BasePage
         parent::getMasterPage()->setSourceTextAreaPlaceholder('Insert here the text to encode...');
         parent::getMasterPage()->setDestinationTextAreaPlaceholder('Encoded text...');
         
-        parent::addJavascript('web/javascripts/Hash.min.js');
-        parent::addCss('web/css/MD2Generator.css');
+        
         
         parent::setPageTitle("MD2 generator - Dev.me");
     }

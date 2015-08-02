@@ -15,6 +15,7 @@ class SHA512Generator extends BasePage
         
         parent::addMasterPagePart('title', 'title');
         parent::addMasterPagePart('service_name', 'service_name');
+        parent::addMasterPagePart("style_js", "style_js");
         
         parent::getMasterPage()->setWebServiceName( 'SHA512 generator' );
         parent::getMasterPage()->setWebServiceEndPoint( 'http://www.micene.net/dev.me/web/web_services/HashWebService.php' );
@@ -24,8 +25,7 @@ class SHA512Generator extends BasePage
         parent::getMasterPage()->setSourceTextAreaPlaceholder('Insert here the text to hash...');
         parent::getMasterPage()->setDestinationTextAreaPlaceholder('Hashed text...');
         
-        parent::addJavascript('web/javascripts/Hash.min.js');
-        parent::addCss('web/css/SHA512Generator.css');
+        
         
         parent::setPageTitle("SHA512 generator - Dev.me");
     }
