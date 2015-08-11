@@ -106,7 +106,7 @@ use web\localizations\Localization;
         </header>
         <div id="container" class="container-fluid">
             <div class="row">
-                <div id="dark_side_of_menu"></div>
+                <div id="dark_side_of_menu" class="hidden-sm hidden-md hidden-lg"></div>
                 <div id="sidebar" class="hidden-xs">
                     <input type="text" id="search_functionality_text" class="form-control" placeholder="Search functionality..." />
                     <ul id="sidebar_menu">

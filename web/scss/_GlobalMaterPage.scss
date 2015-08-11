@@ -144,6 +144,16 @@ div, span, li, small
     }
 }
 
+
+@media (max-width: 767px) 
+{
+    #sidebar
+    {
+        width: 90%;
+        max-width: 400px; 
+    }
+}
+
 #title
 {
     /*font-size: 1.2em;*/
@@ -176,8 +186,8 @@ div, span, li, small
 @media (max-width: 768px){
     #content
     {
-        margin-left: 0px;
-        margin-right: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
         padding-left: 0px;
     }
 }
