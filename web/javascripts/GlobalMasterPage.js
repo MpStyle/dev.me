@@ -38,13 +38,19 @@ GlobalMasterPage.prototype.webApp = function ()
 
 GlobalMasterPage.prototype.loadPage = function (url) {
     this.hideMenu();
-    
+
+    this.pageIsLoading();
+
     $.get(url, function (data) {
         var $data = $(data);
         document.title = $data.filter('title').text();
         $("#content").html($(data).filter("#container").find("#content").html());
         window.location.hash = url;
     }, "html");
+};
+
+GlobalMasterPage.prototype.pageIsLoading = function () {
+    $("#content").html('<div class="loading_spinner">'+$("#loading_spinner").html()+'</div>');
 };
 
 GlobalMasterPage.prototype.functionalitySearch = function (search)

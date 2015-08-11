@@ -194,6 +194,7 @@ use web\localizations\Localization;
                     </ul>
                 </div>
                 <div id="content" class="">
+                    
                     <h2 id="title"></h2>
                     <div id="service_name"></div>
                     <div id="editor" class="row"></div>
@@ -221,6 +222,8 @@ use web\localizations\Localization;
                 </div>
             </div>
         </div>
+        
+        <div id="loading_spinner">Loading...</div>
 
         <script>
             (function (i, s, o, g, r, a, m) {
